@@ -68,16 +68,17 @@
                     display: flex;
                 }
             }
-            
+
             .link{
                 text-decoration: none;
-                .ancora{
+
+                .active, .ancora{
                     font-size: 20px;
                     height: 100px;
                     transition: 0.3s;
                     color: white;
                     text-decoration: none;
-                    
+
                     &:hover {
                         background-color: black;
                         color: white;
@@ -87,6 +88,14 @@
                         align-items: center;
                         display: flex;
                         padding: 0px 10px;
+                    }
+                }
+
+                .active{
+                    background-color: black;
+                    &:hover{
+                        background-color: white;
+                        color: black;
                     }
                 }
             }

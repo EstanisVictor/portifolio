@@ -16,7 +16,6 @@ export default function Header() {
     const showSidebar = () => setSidebar(!sidebar)
 
     const handleClick = () => {
-        console.log('clicou');
         setSidebar(!sidebar);
     }
 
@@ -39,17 +38,17 @@ export default function Header() {
                         <FaTimes onClick={showSidebar} />
                     </div>
                     <Link className={styles.link} href="/" passHref>
-                        <div className={`${styles.ancora} ${activeLink('')}`} onClick={showSidebar}>
+                        <div className={activeLink('') ? styles.active : styles.ancora} onClick={showSidebar}>
                             Home
                         </div>
                     </Link>
                     <Link className={styles.link} href="projects" passHref>
-                        <div className={`${styles.ancora} ${activeLink('projects')}`} onClick={showSidebar}>
+                        <div className={activeLink('projects') ? styles.active : styles.ancora} onClick={showSidebar}>
                             Projetos
                         </div>
                     </Link>
                     <Link className={styles.link} href="contact" passHref>
-                        <div className={`${styles.ancora} ${activeLink('contact')}`} onClick={showSidebar}>
+                        <div className={activeLink('contact') ? styles.active : styles.ancora} onClick={showSidebar}>
                             Contatos
                         </div>
                     </Link>
