@@ -1,0 +1,96 @@
+.container{
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid white;
+
+    .content{
+        width: 1120px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px;
+        
+        .contentTitle {
+            text-align: end;
+            .title{
+                font-size: 30px;
+            }
+            .subTitle {
+  
+            }
+        }
+        
+        .menu{
+            font-size: 30px;
+            display: none;
+            cursor: pointer;
+            
+            @media (max-width: 560px) {
+                display: flex;
+            }
+        }
+        .navLinks{
+            display: flex;
+            gap: 20px;
+    
+            @media (max-width: 560px) {
+                flex-direction: column;
+                background-color: #161616;
+                position: fixed;
+                height: 100%;
+    
+                gap: 0px;
+                top: 0px;
+                right: 0px;
+                width: 60%;
+                right: 0px;
+                transition: 0.5s;
+    
+                div {
+                margin-top: 100px;
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                }
+            }
+            
+            .closeSideBar{
+                font-size: 30px;
+                right: 15px;
+                top: 35px;
+                position: sticky;
+                display: none;
+                cursor: pointer;
+                
+                @media (max-width: 560px) {
+                    display: flex;
+                }
+            }
+            
+            .link{
+                text-decoration: none;
+                .ancora{
+                    font-size: 20px;
+                    height: 100px;
+                    transition: 0.3s;
+                    color: white;
+                    text-decoration: none;
+                    
+                    &:hover {
+                        background-color: black;
+                        color: white;
+                    }
+            
+                    @media (min-width: 560px) {
+                        align-items: center;
+                        display: flex;
+                        padding: 0px 10px;
+                    }
+                }
+            }
+            
+        }
+    }
+}
