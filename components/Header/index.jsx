@@ -1,5 +1,5 @@
 import styles from './styles.module.scss'
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import { FaBars, FaTimes } from 'react-icons/fa'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
@@ -13,12 +13,10 @@ export default function Header() {
         return asPath === `/${path}` ? 'active' : ''
     }
 
-    const showSidebar = () => setSidebar(!sidebar)
-
     const handleClick = () => {
-        setSidebar(!sidebar);
+        setSidebar(prev => !prev)
     }
-
+    
     return (
         <div className={styles.container}>
             <div className={styles.content}>
@@ -30,25 +28,22 @@ export default function Header() {
                         Portifólio Pessoal
                     </div>
                 </div>
-                <div className={styles.menu}>
-                    <FaBars onClick={showSidebar} />
+                <div className={styles.menu} onClick={handleClick}>
+                    {sidebar ? <FaTimes /> : <FaBars />}
                 </div>
-                <nav className={styles.navLinks}>
-                    <div className={styles.closeSideBar}>
-                        <FaTimes onClick={showSidebar} />
-                    </div>
+                <nav className={`${styles.navLinks} ${sidebar && styles.sideBarActive}`}>
                     <Link className={styles.link} href="/" passHref>
-                        <div className={activeLink('') ? styles.active : styles.ancora} onClick={showSidebar}>
+                        <div className={activeLink('') ? styles.active : styles.ancora} onClick={handleClick}>
                             Home
                         </div>
                     </Link>
                     <Link className={styles.link} href="projects" passHref>
-                        <div className={activeLink('projects') ? styles.active : styles.ancora} onClick={showSidebar}>
+                        <div className={activeLink('projects') ? styles.active : styles.ancora} onClick={handleClick}>
                             Projetos
                         </div>
                     </Link>
                     <Link className={styles.link} href="contact" passHref>
-                        <div className={activeLink('contact') ? styles.active : styles.ancora} onClick={showSidebar}>
+                        <div className={activeLink('contact') ? styles.active : styles.ancora} onClick={handleClick}>
                             Contatos
                         </div>
                     </Link>
