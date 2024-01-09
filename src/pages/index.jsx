@@ -15,7 +15,7 @@ export default function Home() {
           <span className={styles.function}>Tecnico de Informática - IFMG Campus Ponte Nova</span>
           <span className={styles.function}>Graduando Sistemas de Informação - IFMG Campus Ouro Branco</span>
           <span className={styles.intro}>
-            Tenho expêriencia em: Next.js, React.js, TypeScript, Java Spring e Python. Além disso, expêriencia com bancos de dados relacionais (PostgreSQL e MySQL) e também breve conhecimento com Docker
+            Tenho expêriencia com: Next.js, React.js, TypeScript, Tailwind, Java Spring e Python. Além disso, expêriencia com bancos de dados relacionais (PostgreSQL e MySQL), não relacionais (Mongo DB) e também breve conhecimento com Docker
           </span>
           <Link className={styles.link} href="projects">
             <button className={styles.linkProjects}>
