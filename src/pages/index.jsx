@@ -25,7 +25,7 @@ export default function Home() {
           </Link>
         </div>
         <div className={styles.logo}>
-          <img src="/images/minhaFoto.jpeg" />
+          <img src="/images/myPhoto.jpeg" />
         </div>
       </div>
     </div>
