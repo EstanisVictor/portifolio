@@ -40,7 +40,7 @@ export default function Contact() {
                     <ItemContact
                         IconFa={FiMail}
                         label="Email"
-                        LinkContact={"mailto:seu.email@exemplo.com"}
+                        LinkContact={"mailto:victor.estanislau1@gmail.com"}
                     />
                 </div>
             </section>
