@@ -10,7 +10,7 @@ export default function Header() {
     const { asPath } = useRouter()
 
     function activeLink(path) {
-        return asPath === `/${path}` ? 'active' : ''
+        return asPath === `/${path}` ? styles.active : styles.ancora
     }
 
     const handleClick = () => {
@@ -18,37 +18,31 @@ export default function Header() {
     }
     
     return (
-        <div className={styles.container}>
+        <header className={styles.container}>
             <div className={styles.content}>
                 <div className={styles.contentTitle}>
-                    <div className={styles.title}>
-                        Victor Ramalho Estanislau
-                    </div>
-                    <div className={styles.subTitle}>
-                        Portifólio Pessoal
-                    </div>
+                    <h1 className={styles.title}>
+                        Victor R. Estanislau
+                    </h1>
+                    <span className={styles.subTitle}>
+                        Desenvolvedor
+                    </span>
                 </div>
                 <div className={styles.menu} onClick={handleClick}>
                     {sidebar ? <FaTimes /> : <FaBars />}
                 </div>
-                <nav className={`${styles.navLinks} ${sidebar && styles.sideBarActive}`}>
-                    <Link className={styles.link} href="/" passHref>
-                        <div className={activeLink('') ? styles.active : styles.ancora} onClick={handleClick}>
-                            Home
-                        </div>
+                <nav className={`${styles.navLinks} ${sidebar ? styles.sideBarActive : ''}`}>
+                    <Link href="/" onClick={handleClick} className={activeLink('')}>
+                        Home
                     </Link>
-                    <Link className={styles.link} href="projects" passHref>
-                        <div className={activeLink('projects') ? styles.active : styles.ancora} onClick={handleClick}>
-                            Projetos
-                        </div>
+                    <Link href="/projects" onClick={handleClick} className={activeLink('projects')}>
+                        Projetos
                     </Link>
-                    <Link className={styles.link} href="contact" passHref>
-                        <div className={activeLink('contact') ? styles.active : styles.ancora} onClick={handleClick}>
-                            Contatos
-                        </div>
+                    <Link href="/contact" onClick={handleClick} className={activeLink('contact')}>
+                        Contatos
                     </Link>
                 </nav>
             </div>
-        </div>
+        </header>
     )
 }

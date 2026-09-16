@@ -1,36 +1,62 @@
-.item{
-    margin-top: 40px;
-    width: 100%;
-    border-radius: 50%;
+.item {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-color);
+    padding: 20px 24px;
+    border-radius: 16px;
     display: flex;
     align-items: center;
-    word-break: break-word;
-  
-    
-    @media (max-width: 760px) {
-     font-size: 12px;
-    }
-  
-    .icon{
-        margin-right: 10px;
-        display: flex;
-      
-        svg {
-          width: 30px;
-          height: 30px;
+    gap: 20px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+
+    &:hover {
+        background: rgba(255, 255, 255, 0.05);
+        border-color: rgba(255, 255, 255, 0.15);
+        transform: translateY(-4px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+
+        .icon {
+            color: var(--accent-color);
+            transform: scale(1.1);
         }
     }
-    .text{
-        color: white;
-        text-align: start;
+  
+    .icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-primary);
+        background: rgba(255, 255, 255, 0.05);
+        padding: 12px;
+        border-radius: 12px;
+        transition: all 0.3s ease;
+      
+        svg {
+            width: 24px;
+            height: 24px;
+        }
+    }
+    
+    .text {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        overflow: hidden;
 
-        a{
-            color: white;
-            text-decoration: none;
+        .label {
+            color: var(--text-primary);
+            font-weight: 600;
+            font-size: 1rem;
+            font-family: 'Quicksand', sans-serif;
+        }
 
-            &:hover{
-                color: #929292;
-            }
+        .linkText {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
     }
 }

@@ -1,15 +1,16 @@
 import React from 'react'
 import styles from './styles.module.scss'
 
-export default function ItemContact({ IconFa, LinkContact }) {
+export default function ItemContact({ IconFa, label, LinkContact }) {
     return(
-        <div className={styles.item}>
+        <a href={LinkContact} target="_blank" rel="noreferrer" className={styles.item}>
             <div className={styles.icon}>
                 <IconFa />
             </div>
             <div className={styles.text}>
-                <a href={LinkContact}>{LinkContact}</a>
+                <span className={styles.label}>{label}</span>
+                <span className={styles.linkText}>{LinkContact.replace(/(^\w+:|^)\/\//, '')}</span>
             </div>
-        </div>
+        </a>
     )
 }
